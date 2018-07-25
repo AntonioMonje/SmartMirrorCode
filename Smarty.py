@@ -25,7 +25,7 @@ def smartmirror():
 
         #get json data
         #get user input and connect to api call
-        api_info = 'http://api.openweathermap.org/data/2.5/weather?appid=fc1eb676c79af15d04d5bdb88276996a&q=92069'
+        api_info = 'http://api.openweathermap.org/data/2.5/weather?appid=API-KEY-HERE&q=92069'
         json_data = requests.get(api_info).json()
 
 
