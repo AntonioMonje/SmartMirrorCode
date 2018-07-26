@@ -31,7 +31,7 @@ def smartmirror():
             json_data = requests.get(api_info).json()
             news_api_info = ('https://newsapi.org/v2/top-headlines?'
             'country=us&'
-            'apiKey=5API-KEY')
+            'apiKey=API-KEY')
             response = requests.get(news_api_info).json()
         
             #weather for san marcos info
@@ -66,43 +66,43 @@ def smartmirror():
             print("------------------------------------")
             print("---Top 5 News Articles---")
             source_data = response['articles'][0]['source']['name']
-            print("Source: " + str(source_data))
+            print("Source: " + source_data)
             news_title_data = response['articles'][0]['title']
-            print("Article Title: " + str(news_title_data))
+            print("Article Title: " + news_title_data)
             news_description_data = response['articles'][0]['description']
-            print("Article Description: " + str(news_description_data))
+            print("Article Description: " + news_description_data)
             print('\n')
 
             source_data1 = response['articles'][1]['source']['name']
-            print("Source: " + str(source_data1))
+            print("Source: " + source_data1)
             news_title_data1 = response['articles'][1]['title']
-            print("Article Title: " + str(news_title_data1))
+            print("Article Title: " + news_title_data1)
             news_description_data1 = response['articles'][1]['description']
-            print("Article Description: " + str(news_description_data1))
+            print("Article Description: " + news_description_data1)
             print('\n')
 
             source_data2 = response['articles'][2]['source']['name']
-            print("Source: " + str(source_data2))
+            print("Source: " + source_data2)
             news_title_data2 = response['articles'][2]['title']
-            print("Article Title: " + str(news_title_data2))
+            print("Article Title: " + news_title_data2)
             news_description_data2 = response['articles'][2]['description']
-            print("Article Description: " + str(news_description_data2))
+            print("Article Description: " + news_description_data2)
             print('\n')
 
             source_data3 = response['articles'][3]['source']['name']
-            print("Source: " + str(source_data3))
+            print("Source: " + source_data3)
             news_title_data3 = response['articles'][3]['title']
-            print("Article Title: " + str(news_title_data3))
+            print("Article Title: " + news_title_data3)
             news_description_data3 = response['articles'][3]['description']
-            print("Article Description: " + str(news_description_data3))
+            print("Article Description: " + news_description_data3)
             print('\n')
 
             source_data4 = response['articles'][4]['source']['name']
-            print("Source: " + str(source_data4))
+            print("Source: " + source_data4)
             news_title_data4 = response['articles'][4]['title']
-            print("Article Title: " + str(news_title_data4))
+            print("Article Title: " + news_title_data4)
             news_description_data4 = response['articles'][4]['description']
-            print("Article Description: " + str(news_description_data4))
+            print("Article Description: " + news_description_data4)
             print('\n')
         except:
             print('\n')
@@ -110,8 +110,9 @@ def smartmirror():
             print("-Error with news API or weather API. Something went wrong!    -")
             print("-weather will update next refresh                             -")
             print("-news will update next refresh                                -")
+            print("-next refresh in 30 seconds                                   -")
             print("---------------------------------------------------------------")
-            time.sleep(5)
+            time.sleep(25)
             smartmirror()
             break
         
