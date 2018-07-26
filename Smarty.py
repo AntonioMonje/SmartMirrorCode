@@ -7,11 +7,7 @@ import subprocess as sp
 
 def smartmirror():
     while True:
-        print("------------------------------------")
-        print("Smart Mirror starting...")
-        print("CODE WRITTEN BY: ANTONIO MONJE")
-        print("special thanks to Leo and Alex")
-        print datetime.datetime.utcnow()
+        
         time.sleep(5)
         tmp = sp.call('cls',shell=True)
         tmp2 = sp.call('clear',shell=True)
@@ -30,13 +26,14 @@ def smartmirror():
         print('\n')
         #get json data
         #get user input and connect to api call
-        api_info = 'http://api.openweathermap.org/data/2.5/weather?appid=API-KEY&q=92069'
-        json_data = requests.get(api_info).json()
-        news_api_info = ('https://newsapi.org/v2/top-headlines?'
-       'country=us&'
-       'apiKey=YOUR-KEY')
-        response = requests.get(news_api_info).json()
         try:
+            api_info = 'http://api.openweathermap.org/data/2.5/weather?appid=API-KEY&q=92069'
+            json_data = requests.get(api_info).json()
+            news_api_info = ('https://newsapi.org/v2/top-headlines?'
+            'country=us&'
+            'apiKey=5API-KEY')
+            response = requests.get(news_api_info).json()
+        
             #weather for san marcos info
             print("city_data: ")
 
@@ -114,6 +111,8 @@ def smartmirror():
             print("-weather will update next refresh                             -")
             print("-news will update next refresh                                -")
             print("---------------------------------------------------------------")
+            time.sleep(5)
+            smartmirror()
             break
         
         time.sleep(3)
@@ -137,6 +136,11 @@ def smartmirror():
 
 def main():  
     #call our smart mirror
+    print("------------------------------------")
+    print("Smart Mirror starting...")
+    print("CODE WRITTEN BY: ANTONIO MONJE")
+    print("special thanks to Leo and Alex")
+    print datetime.datetime.utcnow()
     smartmirror()
     
     
